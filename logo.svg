@@ -1,17 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 190" role="img" aria-labelledby="title desc">
-<title>VOC Research World</title><desc>VOC Research World, Science Innovation Global Impact</desc>
-<defs>
- <linearGradient id="b" x1="0" x2="1"><stop stop-color="#075edb"/><stop offset="1" stop-color="#13b9d6"/></linearGradient>
- <linearGradient id="g" x1="0" x2="1"><stop stop-color="#38b64a"/><stop offset="1" stop-color="#13b9d6"/></linearGradient>
-</defs>
-<g transform="translate(12 10)">
- <text x="0" y="105" font-family="Arial,sans-serif" font-weight="900" font-size="110" fill="url(#b)">VOC</text>
- <circle cx="255" cy="69" r="45" fill="none" stroke="url(#g)" stroke-width="8"/>
- <path d="M211 68 C235 18, 290 18, 315 68 C290 120,235 120,211 68Z" fill="none" stroke="#075edb" stroke-width="5"/>
- <path d="M222 47h67M217 68h76M222 89h67" stroke="#075edb" stroke-width="4"/>
- <path d="M170 78 C235 15, 345 30, 405 75" fill="none" stroke="#38b64a" stroke-width="5"/>
- <circle cx="170" cy="78" r="7" fill="#38b64a"/><circle cx="405" cy="75" r="7" fill="#38b64a"/>
- <text x="425" y="73" font-family="Arial,sans-serif" font-weight="800" font-size="30" fill="#092447">RESEARCH WORLD</text>
- <text x="425" y="105" font-family="Arial,sans-serif" font-weight="700" font-size="15" fill="#075edb" letter-spacing="2">SCIENCE • INNOVATION • GLOBAL IMPACT</text>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150"><text x="0" y="102" font-family="Arial,sans-serif" font-size="92" font-weight="800" fill="#0969d7">VOC</text><ellipse cx="164" cy="76" rx="48" ry="27" fill="none" stroke="#20a86b" stroke-width="7"/><ellipse cx="164" cy="76" rx="18" ry="48" fill="none" stroke="#0969d7" stroke-width="5"/><path d="M207 76 C255 42 274 47 302 64" fill="none" stroke="#20a86b" stroke-width="7"/><circle cx="302" cy="64" r="7" fill="#20a86b"/><text x="325" y="70" font-family="Arial,sans-serif" font-size="31" font-weight="800" fill="#18324d">RESEARCH WORLD</text><text x="325" y="101" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#0969d7">SCIENCE • INNOVATION • GLOBAL IMPACT</text></svg>
