@@ -1,21 +1,24 @@
-# VOC Research World — Version 4
+# VOC Research World V5
 
-A mobile-friendly static scientific platform for GitHub Pages.
+V5 is the next architectural step for VOC Research World.
 
-## Upload
-Upload all files in this folder to the root of the `main` branch of the repository. Do not upload the ZIP itself.
-
-## Included
-- Home
-- Knowledge Hub with search and filters
-- Article system with several starter articles
-- Research directions
-- Publications
-- Instrumentation
-- Data & AI
-- About
-- Contact
-- Responsive mobile navigation
+## What changed
+- Author profile architecture
+- Structured article records
+- Article detail pages with references
+- Research-project records and detail pages
+- Scientific diagram support (SVG)
+- Dedicated submission page prepared for a future backend
+- Shared JavaScript data layer designed to be replaceable by an API/CMS later
+- Responsive navigation and layout
+- GitHub Pages compatible: no build step required
 
 ## Important
-This remains a static site. The contact form opens the visitor's email client; it does not yet provide a database-backed CMS.
+V5 is still a static GitHub Pages site. The submission form is a preparation interface only; it does not publish to a central database.
+
+## Future backend path
+1. Keep the front-end structure.
+2. Move article/author/project data from `assets/js/data.js` to an API or CMS.
+3. Add authentication and editorial roles.
+4. Add database storage, media storage and moderation.
+5. Add DOI/reference metadata and version history.
