@@ -1,15 +1,1 @@
-# VOC Research World — Version 2.1
-
-Mobile-optimized static website for VOC Research World.
-
-## Files
-- index.html — homepage and Knowledge Hub
-- article.html — article view
-- research.html — research areas
-- about.html — about and contribution information
-- style.css — responsive styling
-- script.js — article cards, search and mobile navigation
-- logo.svg — VOC Research World logo
-
-## GitHub Pages
-Upload/replace these files in the repository's `main` branch and keep GitHub Pages pointed to `main` / `(root)`.
+VOC Research World V3 — multi-page static scientific platform. Upload these files to the root of the GitHub Pages repository and commit directly to main. The site is static; contact uses email and there is no database/CMS yet.
