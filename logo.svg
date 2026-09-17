@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100"><text x="4" y="70" font-family="Arial" font-size="64" font-weight="800" fill="#0878d1">VOC</text><ellipse cx="113" cy="50" rx="35" ry="18" fill="none" stroke="#20a46b" stroke-width="4"/><ellipse cx="113" cy="50" rx="14" ry="36" fill="none" stroke="#0878d1" stroke-width="4"/><path d="M84 50C100 24 128 24 142 50C156 76 184 76 198 50" fill="none" stroke="#20a46b" stroke-width="4"/><circle cx="198" cy="50" r="5" fill="#20a46b"/><text x="216" y="47" font-family="Arial" font-size="22" font-weight="800" fill="#102a43">RESEARCH WORLD</text><text x="216" y="68" font-family="Arial" font-size="8" letter-spacing="2" fill="#1672c4">SCIENCE • INNOVATION • GLOBAL IMPACT</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-label="VOC Research World logo">
+<rect width="520" height="150" fill="white" fill-opacity="0"/>
+<text x="0" y="92" font-family="Arial, sans-serif" font-size="82" font-weight="800" fill="#0877d1">VOC</text>
+<ellipse cx="112" cy="70" rx="33" ry="52" fill="none" stroke="#18a56b" stroke-width="5" transform="rotate(35 112 70)"/>
+<ellipse cx="112" cy="70" rx="20" ry="54" fill="none" stroke="#0877d1" stroke-width="4" transform="rotate(-35 112 70)"/>
+<path d="M143 73 C180 42 193 100 218 72 C230 59 238 56 252 68" fill="none" stroke="#18a56b" stroke-width="5"/>
+<circle cx="252" cy="68" r="6" fill="#18a56b"/>
+<text x="270" y="64" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#102a43">RESEARCH WORLD</text>
+<text x="270" y="91" font-family="Arial, sans-serif" font-size="10" letter-spacing="3" fill="#0877d1">SCIENCE · INNOVATION · GLOBAL IMPACT</text>
+</svg>
