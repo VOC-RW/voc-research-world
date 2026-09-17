@@ -1,7 +1,15 @@
-# VOC Research World — Version 2
+# VOC Research World — Version 2.1
 
-Multi-page scientific education and research platform for GitHub Pages.
+Mobile-optimized static website for VOC Research World.
 
-Pages: Home/Knowledge Hub, Article pages, Research, About/Contribute.
+## Files
+- index.html — homepage and Knowledge Hub
+- article.html — article view
+- research.html — research areas
+- about.html — about and contribution information
+- style.css — responsive styling
+- script.js — article cards, search and mobile navigation
+- logo.svg — VOC Research World logo
 
-Articles are currently stored in `script.js`. A future CMS/database can replace this static publishing model.
+## GitHub Pages
+Upload/replace these files in the repository's `main` branch and keep GitHub Pages pointed to `main` / `(root)`.

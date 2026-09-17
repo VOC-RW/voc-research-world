@@ -1,2 +1,49 @@
-const ARTICLES=[{id:'metabolic-regulation',cat:'Biochemistry',title:'Understanding Metabolic Regulation',date:'17 September 2026',desc:'How cells coordinate carbohydrate, lipid and protein metabolism through enzymes, hormones and feedback mechanisms.',body:'<p>Metabolic regulation is the coordinated control of biochemical pathways so that cells can meet changing energy and biosynthetic demands. Regulation occurs through allosteric control, covalent modification, changes in enzyme abundance and hormonal signalling.</p><h2>Why regulation matters</h2><p>A pathway does not simply run at maximum speed. Flux is adjusted according to substrate availability, cellular energy status and physiological conditions. Feedback inhibition is one important mechanism: a downstream product can reduce the activity of an earlier enzyme.</p><h2>Connecting pathways</h2><p>Carbohydrate, lipid and amino-acid metabolism are interconnected through shared intermediates and energy systems. Understanding these connections is central to biochemistry, nutrition, medicine and biotechnology.</p><div class="sources"><b>Research note:</b> This is an introductory educational article and should be supplemented with standard textbooks and primary literature.</div>'},{id:'uv-visible',cat:'Instrumentation',title:'Introduction to UV-Visible Spectrophotometry',date:'17 September 2026',desc:'The scientific basis of absorbance, Beer-Lambert law, instrumentation and analytical applications.',body:'<p>UV-Visible spectrophotometry measures how strongly a sample absorbs ultraviolet or visible electromagnetic radiation. It is widely used for quantitative analysis because absorbance can be related to concentration under appropriate conditions.</p><h2>Beer-Lambert law</h2><p>The relationship is commonly expressed as <b>A = εbc</b>, where A is absorbance, ε is molar absorptivity, b is optical path length and c is concentration.</p><h2>Laboratory applications</h2><p>Applications include biochemical assays, pharmaceutical analysis, environmental measurements and quality-control testing. Proper blanking, wavelength selection, cuvette handling and calibration are essential.</p>'},{id:'calibration',cat:'Analytical Science',title:'Why Calibration Matters in the Laboratory',date:'17 September 2026',desc:'Accuracy, precision, calibration curves, quality control and reliable analytical measurements.',body:'<p>Calibration establishes the relationship between an instrument response and known reference values. Without appropriate calibration, an apparently precise measurement can still be systematically wrong.</p><h2>Accuracy and precision</h2><p>Accuracy concerns closeness to an accepted value, while precision concerns agreement among repeated measurements. A robust analytical procedure considers both.</p><h2>Good laboratory practice</h2><p>Calibration records, reference materials, control samples and documented procedures form part of a quality system and make results more defensible and reproducible.</p>'},{id:'data-ai',cat:'Data & AI',title:'Data Science for Laboratory Scientists',date:'17 September 2026',desc:'How laboratory professionals can use statistics, Python and AI to extract value from experimental data.',body:'<p>Modern laboratories generate large amounts of numerical and instrument data. Data skills help scientists clean, visualize, analyse and communicate measurements more effectively.</p><h2>A practical progression</h2><p>A useful sequence is spreadsheet analysis, descriptive statistics, visualization, Python, statistical modelling and then selected machine-learning or AI workflows.</p><h2>Scientific responsibility</h2><p>AI can assist with pattern recognition, coding and literature workflows, but experimental validity still depends on sound study design, controls, traceable data and scientific judgement.</p>'}];
-function renderHome(list=ARTICLES){const box=document.querySelector('#articles');if(!box)return;box.innerHTML=list.map(a=>`<article class="card"><span class="tag">${a.cat}</span><h3>${a.title}</h3><p>${a.desc}</p><a class="read" href="article.html?id=${a.id}">Read article →</a></article>`).join('')||'<p>No matching articles found.</p>'}function renderArticle(){const box=document.querySelector('#article');if(!box)return;const id=new URLSearchParams(location.search).get('id');const a=ARTICLES.find(x=>x.id===id)||ARTICLES[0];document.title=a.title+' | VOC Research World';box.innerHTML=`<p class="meta">${a.cat} · ${a.date}</p><h1>${a.title}</h1><p class="lead">${a.desc}</p>${a.body}<p style="margin-top:45px"><a class="btn soft" href="index.html#knowledge">← Back to Knowledge Hub</a></p>`}document.addEventListener('DOMContentLoaded',()=>{const y=document.querySelector('#year');if(y)y.textContent=new Date().getFullYear();renderHome();renderArticle();document.querySelector('#search')?.addEventListener('input',e=>{const q=e.target.value.toLowerCase();renderHome(ARTICLES.filter(a=>(a.title+' '+a.cat+' '+a.desc).toLowerCase().includes(q)))});document.querySelector('.menu')?.addEventListener('click',()=>document.querySelector('.nav nav')?.classList.toggle('open'))});
+const articles = [
+  {title:"Understanding Metabolic Regulation", category:"Biochemistry", text:"How cells coordinate carbohydrate, lipid and protein metabolism through enzymes, hormones and feedback mechanisms."},
+  {title:"A Practical Introduction to AAS", category:"Instrumentation", text:"The principle, major components, applications and limitations of atomic absorption spectroscopy."},
+  {title:"From Laboratory Data to Insight", category:"Data & AI", text:"How structured laboratory data can support analysis, quality control and scientific decision-making."},
+  {title:"Quality Assurance in the Laboratory", category:"Laboratory Science", text:"Understanding quality systems, documentation, controls and reliable laboratory results."},
+  {title:"Natural Products and Bioactive Compounds", category:"Natural Products", text:"How scientists investigate plants and other natural sources for chemically and biologically active compounds."},
+  {title:"Experimental Design for Beginners", category:"Research Methods", text:"Core ideas in variables, controls, replication, measurement and reproducible scientific research."}
+];
+
+function renderArticles(filter=""){
+  const box=document.getElementById("articles");
+  if(!box) return;
+  const q=filter.trim().toLowerCase();
+  const found=articles.filter(a =>
+    !q || `${a.title} ${a.category} ${a.text}`.toLowerCase().includes(q)
+  );
+  box.innerHTML=found.length ? found.map((a,i)=>`
+    <article class="card">
+      <span class="tag">${a.category}</span>
+      <h3>${a.title}</h3>
+      <p>${a.text}</p>
+      <a class="read" href="article.html?id=${i}">Read article →</a>
+    </article>
+  `).join("") : `<p>No articles matched your search.</p>`;
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  renderArticles();
+  const search=document.getElementById("search");
+  if(search) search.addEventListener("input",e=>renderArticles(e.target.value));
+
+  const menu=document.querySelector(".menu");
+  const nav=document.querySelector(".nav nav");
+  if(menu && nav){
+    menu.addEventListener("click",()=>{
+      const open=nav.classList.toggle("open");
+      menu.setAttribute("aria-expanded",String(open));
+      menu.textContent=open ? "✕" : "☰";
+    });
+    nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+      nav.classList.remove("open");
+      menu.setAttribute("aria-expanded","false");
+      menu.textContent="☰";
+    }));
+  }
+
+  const year=document.getElementById("year");
+  if(year) year.textContent=new Date().getFullYear();
+});
