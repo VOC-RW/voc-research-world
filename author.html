@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="VOC Research World — scientific education, research communication and innovation."><title>Research | VOC Research World</title><link rel="stylesheet" href="assets/css/style.css"></head><body>
+<meta name="description" content="VOC Research World — scientific education, research communication and innovation."><title>Author Profile | VOC Research World</title><link rel="stylesheet" href="assets/css/style.css"></head><body>
 <header class="site-header">
 <div class="container nav">
 <a class="brand" href="index.html"><img src="logo.svg" alt="VOC Research World"></a>
@@ -11,9 +11,17 @@
 <nav id="mobileNav" class="mobile-nav container">
 <a href="index.html">Home</a><a href="knowledge.html">Knowledge Hub</a><a href="authors.html">Authors</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="instrumentation.html">Instrumentation</a><a href="data-ai.html">Data & AI</a><a href="about.html">About</a><a href="contact.html">Contact</a>
 </nav></header><main>
-<section class="page-hero"><div class="container"><div class="eyebrow">Research</div><h1>Research projects with a visible evidence trail.</h1><p class="lead">Each project page separates a research idea from completed evidence and records objectives, methods, status and intended outputs.</p></div></section>
-<section class="section"><div class="container"><div class="grid two" id="projectGrid"></div></div></section>
-<script>document.addEventListener("DOMContentLoaded",()=>{document.getElementById("projectGrid").innerHTML=Object.values(VOC_PROJECTS).map(projectCard).join("")});</script>
+<section class="page-hero"><div class="container"><div class="eyebrow">Author Profile</div><h1 id="authorTitle">Author</h1><p id="authorRole" class="kicker"></p><p id="authorBio" class="lead"></p></div></section>
+<section class="section"><div class="container"><h2>Areas of interest</h2><div id="interests" class="filters"></div><h2>Articles</h2><div id="authorArticles" class="grid two"></div></div></section>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+ const id=new URLSearchParams(location.search).get("id")||"voc", a=author(id);
+ document.title=a.name+" | VOC Research World"; document.getElementById("authorTitle").textContent=a.name; document.getElementById("authorRole").textContent=a.role; document.getElementById("authorBio").textContent=a.bio;
+ document.getElementById("interests").innerHTML=a.interests.map(x=>`<span class="pill">${esc(x)}</span>`).join("");
+ const items=Object.values(VOC_ARTICLES).filter(x=>x.authorId===id);
+ document.getElementById("authorArticles").innerHTML=items.length?items.map(articleCard).join(""):`<div class="empty"><p>No published articles listed yet.</p></div>`;
+});
+</script>
 </main><footer class="footer"><div class="container footer-grid">
 <div><h3>VOC RESEARCH WORLD</h3><p>Scientific education, research communication and innovation.</p><p class="small">© <span data-year></span> VOC Research World</p></div>
 <div><h3>Explore</h3><p><a href="knowledge.html">Knowledge Hub</a></p><p><a href="authors.html">Authors</a></p><p><a href="research.html">Research</a></p><p><a href="publications.html">Publications</a></p></div>
